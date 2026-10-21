@@ -1,0 +1,6 @@
+/assets/*.js
+  Content-Type: text/javascript; charset=utf-8
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
