@@ -36,7 +36,7 @@ export const MyContributions: React.FC = () => {
         author: user.id || user._id,
         limit: 50,
       });
-      setQuestions(res.data);
+      setQuestions(Array.isArray(res?.data) ? res.data : []);
     } catch (err: any) {
       toastError(err.message || 'Failed to load contributions.');
     } finally {

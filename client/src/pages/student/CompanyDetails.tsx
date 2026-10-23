@@ -33,7 +33,7 @@ export const CompanyDetails: React.FC = () => {
           questionService.getQuestions({ company: id, limit: 50 }),
         ]);
         setCompany(compData);
-        setQuestions(qRes.data);
+        setQuestions(Array.isArray(qRes?.data) ? qRes.data : []);
       } catch (err) {
         console.error('Failed to load company:', err);
       } finally {

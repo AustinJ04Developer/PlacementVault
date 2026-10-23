@@ -64,11 +64,12 @@ export const SubmitQuestion: React.FC = () => {
           companyService.getCompanies({ limit: 100 }),
           companyService.getCategories(),
         ]);
-        setCompanies(compRes.data);
-        if (compRes.data.length > 0) {
-          setCompanyId(compRes.data[0]._id);
+        const compList = Array.isArray(compRes?.data) ? compRes.data : [];
+        setCompanies(compList);
+        if (compList.length > 0) {
+          setCompanyId(compList[0]._id);
         }
-        setCategories(catRes);
+        setCategories(Array.isArray(catRes) ? catRes : []);
       } catch (err: any) {
         toastError('Failed to load recruitment companies or categories.');
       } finally {

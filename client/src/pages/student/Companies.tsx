@@ -14,7 +14,7 @@ export const Companies: React.FC = () => {
       try {
         setIsLoading(true);
         const res = await companyService.getCompanies({ search: search || undefined, limit: 100 });
-        setCompanies(res.data);
+        setCompanies(Array.isArray(res?.data) ? res.data : []);
       } catch (err) {
         console.error('Failed to load companies:', err);
       } finally {

@@ -35,7 +35,7 @@ export const AdminQuestions: React.FC = () => {
         status: statusFilter,
         limit: 50,
       });
-      setQuestions(res.data);
+      setQuestions(Array.isArray(res?.data) ? res.data : []);
     } catch (err: any) {
       toastError(err.message || 'Failed to load questions.');
     } finally {

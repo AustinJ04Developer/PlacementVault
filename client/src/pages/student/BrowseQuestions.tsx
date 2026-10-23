@@ -50,8 +50,8 @@ export const BrowseQuestions: React.FC = () => {
           companyService.getCompanies({ limit: 100 }),
           companyService.getCategories(),
         ]);
-        setCompanies(compRes.data);
-        setCategories(catRes);
+        setCompanies(Array.isArray(compRes?.data) ? compRes.data : []);
+        setCategories(Array.isArray(catRes) ? catRes : []);
       } catch (err) {
         console.error('Failed to load companies/categories:', err);
       }
@@ -90,8 +90,8 @@ export const BrowseQuestions: React.FC = () => {
           limit: 10,
         });
 
-        setQuestions(res.data);
-        setMeta(res.meta);
+        setQuestions(Array.isArray(res?.data) ? res.data : []);
+        setMeta(res?.meta || { total: 0, page: 1, limit: 10, totalPages: 1 });
       } catch (err) {
         console.error('Failed to query questions:', err);
       } finally {

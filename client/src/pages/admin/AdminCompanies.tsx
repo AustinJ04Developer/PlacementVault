@@ -38,7 +38,7 @@ export const AdminCompanies: React.FC = () => {
     try {
       setIsLoading(true);
       const res = await companyService.getCompanies({ search: search || undefined, activeOnly: false, limit: 100 });
-      setCompanies(res.data);
+      setCompanies(Array.isArray(res?.data) ? res.data : []);
     } catch (err: any) {
       toastError(err.message || 'Failed to load companies.');
     } finally {

@@ -40,10 +40,11 @@ export const AdminDrives: React.FC = () => {
         companyService.getDrives({}),
         companyService.getCompanies({ limit: 100 }),
       ]);
-      setDrives(drivesData);
-      setCompanies(compRes.data);
-      if (compRes.data.length > 0) {
-        setCompanyId(compRes.data[0]._id);
+      setDrives(Array.isArray(drivesData) ? drivesData : []);
+      const companiesList = Array.isArray(compRes?.data) ? compRes.data : [];
+      setCompanies(companiesList);
+      if (companiesList.length > 0) {
+        setCompanyId(companiesList[0]._id);
       }
     } catch (err: any) {
       toastError(err.message || 'Failed to load drives.');
