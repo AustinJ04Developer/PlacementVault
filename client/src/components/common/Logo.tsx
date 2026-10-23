@@ -52,25 +52,25 @@ export const Logo: React.FC<LogoProps> = ({
             <linearGradient id={`pv-bg-${variant}`} x1="0%" y1="0%" x2="100%" y2="100%">
               {variant === 'admin' ? (
                 <>
-                  <stop offset="0%" stop-color="#D97706" />
-                  <stop offset="50%" stop-color="#B45309" />
-                  <stop offset="100%" stop-color="#78350F" />
+                  <stop offset="0%" stopColor="#D97706" />
+                  <stop offset="50%" stopColor="#B45309" />
+                  <stop offset="100%" stopColor="#78350F" />
                 </>
               ) : (
                 <>
-                  <stop offset="0%" stop-color="#2563EB" />
-                  <stop offset="50%" stop-color="#4F46E5" />
-                  <stop offset="100%" stop-color="#7C3AED" />
+                  <stop offset="0%" stopColor="#2563EB" />
+                  <stop offset="50%" stopColor="#4F46E5" />
+                  <stop offset="100%" stopColor="#7C3AED" />
                 </>
               )}
             </linearGradient>
             <linearGradient id="pv-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FDE047" />
-              <stop offset="100%" stop-color="#F59E0B" />
+              <stop offset="0%" stopColor="#FDE047" />
+              <stop offset="100%" stopColor="#F59E0B" />
             </linearGradient>
             <linearGradient id="pv-white" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FFFFFF" />
-              <stop offset="100%" stop-color="#E2E8F0" />
+              <stop offset="0%" stopColor="#FFFFFF" />
+              <stop offset="100%" stopColor="#E2E8F0" />
             </linearGradient>
           </defs>
 
@@ -78,27 +78,27 @@ export const Logo: React.FC<LogoProps> = ({
           <rect x="4" y="4" width="56" height="56" rx="16" fill={`url(#pv-bg-${variant})`} />
 
           {/* Vault Outer Ring with Dial Accents */}
-          <circle cx="32" cy="33" r="18" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="3.5 3.5" />
-          <circle cx="32" cy="33" r="21" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.2" />
+          <circle cx="32" cy="33" r="18" stroke="#FFFFFF" strokeWidth="2" strokeOpacity="0.5" strokeDasharray="3.5 3.5" />
+          <circle cx="32" cy="33" r="21" stroke="#FFFFFF" strokeWidth="1.2" strokeOpacity="0.2" />
 
           {/* Placement Graduation Cap */}
           <polygon points="32,15 48,22 32,29 16,22" fill="url(#pv-white)" />
-          <path d="M22 25.5 V30 C22 33 26.5 35.5 32 35.5 C37.5 35.5 42 33 42 30 V25.5" fill="none" stroke="url(#pv-white)" stroke-width="2" stroke-linecap="round" />
+          <path d="M22 25.5 V30 C22 33 26.5 35.5 32 35.5 C37.5 35.5 42 33 42 30 V25.5" fill="none" stroke="url(#pv-white)" strokeWidth="2" strokeLinecap="round" />
           
           {/* Golden Tassel */}
-          <path d="M44 23.5 L46 29.5 L47 34" stroke="url(#pv-gold)" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M44 23.5 L46 29.5 L47 34" stroke="url(#pv-gold)" strokeWidth="1.8" strokeLinecap="round" />
           <circle cx="47" cy="34.5" r="1.5" fill="url(#pv-gold)" />
 
           {/* Vault Safe Chamber & Keyhole */}
-          <rect x="25" y="36" width="14" height="15" rx="3.5" fill="#0F172A" stroke="url(#pv-gold)" stroke-width="2" />
+          <rect x="25" y="36" width="14" height="15" rx="3.5" fill="#0F172A" stroke="url(#pv-gold)" strokeWidth="2" />
           <circle cx="32" cy="41.5" r="2" fill="url(#pv-gold)" />
           <polygon points="31,41.5 33,41.5 33.5,46.5 30.5,46.5" fill="url(#pv-gold)" />
 
           {/* Subtle Bolt Details */}
-          <circle cx="11" cy="11" r="1.8" fill="#FFFFFF" fill-opacity="0.45" />
-          <circle cx="53" cy="11" r="1.8" fill="#FFFFFF" fill-opacity="0.45" />
-          <circle cx="11" cy="53" r="1.8" fill="#FFFFFF" fill-opacity="0.45" />
-          <circle cx="53" cy="53" r="1.8" fill="#FFFFFF" fill-opacity="0.45" />
+          <circle cx="11" cy="11" r="1.8" fill="#FFFFFF" fillOpacity="0.45" />
+          <circle cx="53" cy="11" r="1.8" fill="#FFFFFF" fillOpacity="0.45" />
+          <circle cx="11" cy="53" r="1.8" fill="#FFFFFF" fillOpacity="0.45" />
+          <circle cx="53" cy="53" r="1.8" fill="#FFFFFF" fillOpacity="0.45" />
         </svg>
       </div>
 
