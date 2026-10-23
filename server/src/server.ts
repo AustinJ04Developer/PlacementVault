@@ -1,10 +1,12 @@
 import { createApp } from './app.js';
 import { connectDB } from './config/db.js';
 import { ENV } from './config/env.js';
+import { ensureAdminAccount } from './config/adminSeed.js';
 
 const startServer = async () => {
   try {
     await connectDB();
+    await ensureAdminAccount();
     const app = createApp();
 
     const server = app.listen(ENV.PORT, () => {

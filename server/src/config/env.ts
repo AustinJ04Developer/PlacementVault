@@ -1,5 +1,10 @@
 import dotenv from 'dotenv';
+import path from 'path';
+
+// Load .env from cwd or common locations
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), 'server', '.env') });
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 export const ENV = {
   PORT: process.env.PORT || '5000',
@@ -9,6 +14,7 @@ export const ENV = {
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || '7d',
   CLIENT_URL: process.env.CLIENT_URL || process.env.FRONTEND_URL || 'http://localhost:5173',
   FRONTEND_URL: process.env.CLIENT_URL || process.env.FRONTEND_URL || 'http://localhost:5173',
-  ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'admin@placementvault.edu',
-  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'AdminSecure@2026!',
+  ADMIN_EMAIL: (process.env.ADMIN_EMAIL || 'admin@placementvault.edu').toLowerCase().trim(),
+  ADMIN_PASSWORD: (process.env.ADMIN_PASSWORD || 'AdminSecure@2026!').trim(),
 };
+
